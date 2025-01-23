@@ -1273,6 +1273,26 @@ class NamecoinRegtest(NamecoinTestnet):
     TX_COUNT_HEIGHT = 1
     NAME_EXPIRATION = 30
 
+class Shibacoin(AuxPowMixin, Coin):
+    NAME = "Shibacoin"
+    SHORTNAME = "SHIC"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("02fadafe")
+    XPRV_VERBYTES = bytes.fromhex("02fac495")
+    P2PKH_VERBYTE = bytes.fromhex("63")
+    P2SH_VERBYTES = (bytes.fromhex("22"),)
+    WIF_BYTE = bytes.fromhex("158")
+    GENESIS_HASH = ('ff271edcc83f7d71e7a4e4b0a43b386a'
+                    '188e1470a28671cdbdc47e900118ac7f')
+    PEERS = [
+        'seeds.shibainucoin.net t50001 s50002',
+    ]
+    TX_COUNT = 100857
+    TX_COUNT_HEIGHT = 45008
+    TX_PER_BLOCK = 1
+    REORG_LIMIT = 100000
+    DESERIALIZER = lib_tx.DeserializerAuxPowSegWit
+
 
 class Dogecoin(AuxPowMixin, Coin):
     NAME = "Dogecoin"
