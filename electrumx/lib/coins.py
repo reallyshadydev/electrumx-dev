@@ -1293,6 +1293,26 @@ class Shibacoin(AuxPowMixin, Coin):
     REORG_LIMIT = 100000
     DESERIALIZER = lib_tx.DeserializerAuxPowSegWit
 
+class DogecoinEV(AuxPowMixin, Coin):
+    NAME = "DogecoinEV"
+    SHORTNAME = "DEV"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("02facafd")
+    XPRV_VERBYTES = bytes.fromhex("02fac398")
+    P2PKH_VERBYTE = bytes.fromhex("1e")  # 30 in decimal
+    P2SH_VERBYTES = (bytes.fromhex("16"),)  # 22 in decimal
+    WIF_BYTE = bytes.fromhex("9e")  # 158 in decimal
+    GENESIS_HASH = ('1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691')
+    PEERS = [
+        'dnsseed.junkcoinexplorer.com',
+    ]
+    TX_COUNT = 100857
+    TX_COUNT_HEIGHT = 45008
+    TX_PER_BLOCK = 1
+    REORG_LIMIT = 100000
+    DESERIALIZER = lib_tx.DeserializerAuxPowSegWit
+
+
 
 class Dogecoin(AuxPowMixin, Coin):
     NAME = "Dogecoin"
